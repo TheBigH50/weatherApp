@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+/* This component take user input to set parent's (MenuModal) state of "favorite" and conditionally renders input/display of favorite based on the state */
+
 export default function FavoriteInput({ favorite, setFavorite }) {
   let [text, setText] = useState("");
 
