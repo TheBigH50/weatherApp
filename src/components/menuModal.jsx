@@ -8,7 +8,7 @@ export default function MenuModal() {
 
     
     return(
-<div className='flex flex-col bg-gray-900 opacity-75 min-h-screen z-10'>
+<div className='flex flex-col bg-gray-900 min-h-screen z-10 fixed w-screen h-screen touch-none'>
     <FavoriteInput setFavorite={setFavorite} favorite={favorite}/>
 </div>
     )
