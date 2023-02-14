@@ -1,11 +1,13 @@
 import { useState, useEffect, useParams } from 'react'
-import { getWeather } from './functions'
+import { getWeather } from '../helperFunctions/getWeather.js'
 
 
-function menuModal() {
+export default function MenuModal() {
     
     
     return(
-<div></div>
+<div>
+    <p>Hello World!</p>
+</div>
     )
 }
