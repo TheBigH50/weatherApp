@@ -34,7 +34,7 @@ export default function FavoriteInput({ favorite, setFavorite }) {
   } else {
     return (
       <div className="flex flex-col self-center z-20 text-yellow-300 border-yellow-300 border p-4 rounded-lg w-10/12">
-        <h6 className="flex self-center text-lg">Favorite:<span className="font-semibold">{` \u0000 ${favorite}`}</span></h6>
+        <h6 className="flex self-center text-lg">Favorite:<em className="font-semibold">{` \u0000 ${favorite}`}</em></h6>
       </div>
     );
   }
