@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import FavoriteInput from "./favoriteInput.jsx";
-import RecentList from "./recentList.jsx";
-import SearchInput from "./searchInput.jsx";
+import FavoriteInput from "./MMcomponents/favoriteInput.jsx";
+import RecentList from "./MMcomponents/recentList.jsx";
+import SearchInput from "./MMcomponents/searchInput.jsx";
 
 export default function MenuModal({ location, setLocation }) {
   let [favorite, setFavorite] = useState("");

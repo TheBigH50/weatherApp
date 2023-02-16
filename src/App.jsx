@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./index.css";
 import getWeather from "./helperFunctions/getWeather.js";
-import MenuModal from "./components/menuModal";
+import MenuModal from "./components/MenuModal/menuModal";
 
 function App() {
   const [weatherData, setWeatherData] = useState({});
