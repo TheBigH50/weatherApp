@@ -26,7 +26,7 @@ export default function MenuModal({ location, setLocation }) {
       </h2>
       <FavoriteInput favorite={favorite} setFavorite={setFavorite} />
       <RecentList recent={recent} />
-      <SearchInput setLocation={setLocation} setRecent={setRecent} />
+      <SearchInput setLocation={setLocation} recent={recent} setRecent={setRecent} />
       <CloseOrReset setFavorite={setFavorite} />
     </div>
   );

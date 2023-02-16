@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function SearchInput({ setLocation, setRecent }) {
+export default function SearchInput({ setLocation, recent, setRecent }) {
   let [cityText, setCityText] = useState("");
   let [stateText, setStateText] = useState("");
   let [cityPlaceholder, setCityPlaceholder] = useState("Minneapolis");
@@ -9,6 +9,7 @@ export default function SearchInput({ setLocation, setRecent }) {
   function onSubmit(event) {
     event.preventDefault();
 
+    setRecent(Array(cityText, ...recent).slice(0, 3));
     setLocation(Array(cityText, stateText));
     setCityPlaceholder(cityText);
     setStatePlaceholder(stateText);
