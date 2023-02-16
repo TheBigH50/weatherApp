@@ -1,4 +1,6 @@
-export default async function getWeather(city, state) {
+export default async function getWeather(locationPairArr) {
+  const city = locationPairArr[0];
+  const state = locationPairArr[1];
   try {
     const geoResponse = await fetch(
       `https://api.openweathermap.org/geo/1.0/direct?q=${city},${state},US&limit=1&appid=826c0b8bd9ecf523fabd78daf3fabeaf`
@@ -13,7 +15,7 @@ export default async function getWeather(city, state) {
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=826c0b8bd9ecf523fabd78daf3fabeaf&units=imperial`
     );
 
-    const weatherData = await weatherResponse.json();
+    const weatherData = await weatherResponse.json();       
     const actualTemp = weatherData.main.temp;
     const feelsLikeTemp = weatherData.main.feels_like;
     const highTemp = weatherData.main.temp_max;
@@ -23,7 +25,7 @@ export default async function getWeather(city, state) {
     const weatherIcon = `https://openweathermap.org/img/wn/${weatherIconCode}.png`;
     const currentWeather = weatherData.weather[0].description;
     const cloudCover = weatherData.clouds.all;
-    const hourRainTotal = weatherData.rain["1h"];
+    const hourRainTotal = weatherData.rain === undefined ? 0 : weatherData.rain["1h"];
     const windDirection = weatherData.wind.deg;
     const windSpeed = weatherData.wind.speed;
     const gustSpeed = weatherData.wind.gust;
@@ -54,4 +56,3 @@ export default async function getWeather(city, state) {
 }
 
 //getWeather("Minneapolis", "MN");
-

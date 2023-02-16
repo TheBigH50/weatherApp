@@ -18,7 +18,7 @@ export default function SearchInput({ setLocation, recent, setRecent }) {
   }
 
   return (
-    <div className="flex flex-col self-center z-20 text-yellow-300 border-yellow-300 border p-4 rounded-lg w-10/12">
+    <div className="flex flex-col self-center z-20 bg-gray-900 text-yellow-300 border-yellow-300 border p-4 rounded-lg w-10/12">
       <form onSubmit={onSubmit} className="flex flex-col self-center">
         <label
           htmlFor="searchInput"
@@ -51,7 +51,7 @@ export default function SearchInput({ setLocation, recent, setRecent }) {
             maxLength={"2"}
           ></input>
         </label>
-        <button type="submit" className="flex text-lg self-center">
+        <button type="submit" className="flex text-lg mt-3 self-center">
           Get Weather
         </button>
       </form>

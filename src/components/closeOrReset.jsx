@@ -14,7 +14,7 @@ export default function CloseOrReset({ setFavorite }) {
   if (!visible) {
     return (
       <div className="flex self-center w-10/12 h-1/5">
-        <div className="flex justify-center items-center z-20 text-yellow-300 border-yellow-300 border rounded-lg w-full h-1/4">
+        <div className="flex justify-center items-center z-20 bg-gray-900 text-yellow-300 border-yellow-300 border rounded-lg w-full h-1/4">
           <button
             type="click"
             onClick={openMenu}
@@ -27,7 +27,7 @@ export default function CloseOrReset({ setFavorite }) {
 
   return (
     <div className="flex self-center w-10/12 h-1/5">
-      <div className="flex justify-center z-20 text-yellow-300 border-yellow-300 border rounded-lg w-full h-full">
+      <div className="flex justify-center z-20 bg-gray-900 text-yellow-300 border-yellow-300 border rounded-lg w-full h-full">
         <div className="flex flex-col">
           <button
             type="click"

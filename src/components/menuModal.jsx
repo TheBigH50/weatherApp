@@ -5,11 +5,12 @@ import SearchInput from "./searchInput.jsx";
 import CloseOrReset from "./closeOrReset.jsx";
 
 export default function MenuModal({ location, setLocation }) {
+  
   let [favorite, setFavorite] = useState("");
   let [recent, setRecent] = useState([
-    "Search A City",
-    "Search A City",
-    "Search A City",
+  "\u263C",
+    "\u263C",
+    "\u263C",
   ]);
 
   /* Remove this variable later, used for building components with recent */
@@ -20,8 +21,8 @@ export default function MenuModal({ location, setLocation }) {
   }, []); */
 
   return (
-    <div className="flex flex-col justify-evenly bg-gray-900 min-h-screen z-10 w-screen h-screen touch-none">
-      <h2 className="flex self-center justify-center z-20 text-yellow-300 p-4 text-2xl tracking-wide font-bold w-10/12">
+    <div className="flex fixed flex-col justify-evenly bg-gray-900 bg-opacity-90 min-h-screen z-10 w-screen h-screen touch-none">
+      <h2 className="flex self-center justify-center items-center z-20 bg-gray-900 text-yellow-300 border border-yellow-300 rounded-lg p-4 text-2xl tracking-wide font-bold w-10/12 h-20">
         Menu
       </h2>
       <FavoriteInput favorite={favorite} setFavorite={setFavorite} />
