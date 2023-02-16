@@ -1,5 +1,4 @@
-import { useState, useEffect, useParams } from 'react'
-import { getWeather } from '../helperFunctions/getWeather.js'
+import { useState, useEffect } from 'react'
 import FavoriteInput from './favoriteInput.jsx';
 import RecentList from './recentList.jsx';
 
@@ -7,7 +6,7 @@ import RecentList from './recentList.jsx';
 export default function MenuModal() {
     let [favorite, setFavorite] = useState("");
     let [recent, setRecent] = useState([]);
-
+    
     /* Remove this variable later, used for building components with recent */
     let recentCities = ["Minneapolis", "Saint Joseph", "Paynesville"];
     

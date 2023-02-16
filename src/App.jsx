@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './index.css'
+import getWeather from './helperFunctions/getWeather.js'
 import MenuModal from './components/menuModal'
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [WeatherData, setWeatherData] = useState({});
+  const [location, setLocation] = useState([]);
 
   return (
     <div className="App flex flex-col z-0">      
@@ -13,4 +14,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
