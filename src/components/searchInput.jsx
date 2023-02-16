@@ -31,6 +31,7 @@ export default function SearchInput({ setLocation, setRecent }) {
             name={"searchInput1"}
             placeholder={cityPlaceholder}
             className="flex bg-gray-900 border-b border-yellow-300 focus:outline-none ml-2 mr-2 text-center text-yellow-300 placeholder-yellow-300 placeholder-opacity-70 text-base w-full"
+            required
           ></input>
         </label>
         <label
@@ -45,6 +46,8 @@ export default function SearchInput({ setLocation, setRecent }) {
             name={"searchInput2"}
             placeholder={statePlaceholder}
             className="flex bg-gray-900 border-b border-yellow-300 focus:outline-none ml-2 mr-2 text-center text-yellow-300 placeholder-yellow-300 placeholder-opacity-70 text-base w-full"
+            required
+            maxLength={"2"}
           ></input>
         </label>
         <button type="submit" className="flex text-lg self-center">

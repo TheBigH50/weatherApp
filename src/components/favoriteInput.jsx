@@ -10,6 +10,7 @@ export default function FavoriteInput({ favorite, setFavorite }) {
 
     setFavorite(text);
     console.log(favorite);
+    setText("");
   }
 
   if (favorite === "") {
@@ -25,6 +26,7 @@ export default function FavoriteInput({ favorite, setFavorite }) {
               name={"favInput"}
               placeholder="City Name"
               className="flex bg-gray-900 border-b border-yellow-300 focus:outline-none ml-2 mr-2 text-center text-yellow-300 placeholder-yellow-300 placeholder-opacity-70 text-base w-full"
+              required
             ></input>
           </label>
           <button type="submit" className="flex text-lg">Add</button>
