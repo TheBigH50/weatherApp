@@ -15,7 +15,7 @@ export default function FavoriteInput({ favorite, setFavorite }) {
 
   if (favorite === "") {
     return (
-      <div className="flex flex-col justify-center self-center z-20 bg-gray-900 text-yellow-300 border-yellow-300 border p-4 rounded-lg w-10/12 h-20">
+      <div className="flex flex-col justify-center self-center z-30 bg-gray-900 text-yellow-300 border-yellow-300 border p-4 rounded-lg w-10/12 h-20">
         <form onSubmit={onSubmit} className="flex self-center justify-center">
           <label htmlFor="favInput" className="flex text-lg w-10/12">
             Favorite:
@@ -35,7 +35,7 @@ export default function FavoriteInput({ favorite, setFavorite }) {
     );
   } else {
     return (
-      <div className="flex flex-col justify-center self-center z-20 bg-gray-900 text-yellow-300 border-yellow-300 border p-4 rounded-lg w-10/12 h-20">
+      <div className="flex flex-col justify-center self-center z-30 bg-gray-900 text-yellow-300 border-yellow-300 border p-4 rounded-lg w-10/12 h-20">
         <h6 className="flex self-center text-lg">Favorite:<em className="font-semibold">{` \u0000 ${favorite}`}</em></h6>
       </div>
     );

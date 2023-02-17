@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function CloseOrReset({ setFavorite }) {
+export default function CloseOrReset({ setFavorite, isShowing, setIsShowing }) {
   const [visible, setVisible] = useState(false);
 
   function openMenu() {
@@ -11,10 +11,14 @@ export default function CloseOrReset({ setFavorite }) {
     setFavorite("");
   }
 
+  function closeMenu() {
+    setIsShowing(!isShowing);
+  }
+
   if (!visible) {
     return (
       <div className="flex self-center w-10/12 h-1/5">
-        <div className="flex justify-center items-center z-20 bg-gray-900 text-yellow-300 border-yellow-300 border rounded-lg w-full h-1/4">
+        <div className="flex justify-center items-center z-30 bg-gray-900 text-yellow-300 border-yellow-300 border rounded-lg w-full h-1/4">
           <button
             type="click"
             onClick={openMenu}
@@ -27,21 +31,21 @@ export default function CloseOrReset({ setFavorite }) {
 
   return (
     <div className="flex self-center w-10/12 h-1/5">
-      <div className="flex justify-center z-20 bg-gray-900 text-yellow-300 border-yellow-300 border rounded-lg w-full h-full">
+      <div className="flex justify-center z-30 bg-gray-900 text-yellow-300 border-yellow-300 border rounded-lg w-full h-full">
         <div className="flex flex-col">
           <button
-            type="click"
+            type="button"
             onClick={openMenu}
             className="flex items-center self-center pb-4 h-1/3 text-lg"
           >{`\u2263`}</button>
           <button
-            type="click"
+            type="button"
             onClick={resetFavorite}
             className="flex self-center h-1/3 text-lg"
           >
             Reset Favorite
           </button>
-          <button type="submit" className="flex self-center h-1/3 text-lg">
+          <button type="button" onClick={closeMenu} className="flex self-center h-1/3 text-lg">
             Close Menu
           </button>
         </div>
