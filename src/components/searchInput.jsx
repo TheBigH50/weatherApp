@@ -12,8 +12,8 @@ export default function SearchInput({
   statePlaceholder,
   setStatePlaceholder,
 }) {
-  let [cityText, setCityText] = useState("Minneapolis");
-  let [stateText, setStateText] = useState("MN");
+  let [cityText, setCityText] = useState("");
+  let [stateText, setStateText] = useState("");
 
   function onSubmit(event) {
     event.preventDefault();
