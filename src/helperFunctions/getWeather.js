@@ -3,6 +3,7 @@
 export default async function getWeather(locationPairArr) {
   const city = locationPairArr[0];
   const state = locationPairArr[1];
+
   try {
     const geoResponse = await fetch(
       `https://api.openweathermap.org/geo/1.0/direct?q=${city},${state},US&limit=1&appid=826c0b8bd9ecf523fabd78daf3fabeaf`
@@ -57,5 +58,3 @@ export default async function getWeather(locationPairArr) {
     console.error(e);
   }
 }
-
-//getWeather("Minneapolis", "MN");

@@ -6,7 +6,6 @@ import CloseOrReset from "./closeOrReset.jsx";
 /* This is the main MenuModal component, serves as the host for all menu components and blocks scrolling behind it when active.*/
 
 export default function MenuModal({
-  location,
   setLocation,
   isShowing,
   setIsShowing,
@@ -26,8 +25,8 @@ export default function MenuModal({
       </h2>
       <FavoriteInput favorite={favorite} setFavorite={setFavorite} />
       <RecentList recent={recent} />
-      <SearchInput
-        setLocation={setLocation}
+      <SearchInput        
+        setLocation={setLocation}        
         recent={recent}
         setRecent={setRecent}
         cityPlaceholder={cityPlaceholder}
