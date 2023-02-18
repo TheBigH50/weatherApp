@@ -1,10 +1,18 @@
 import { useState } from "react";
 
-export default function SearchInput({ setLocation, recent, setRecent }) {
+/* This component uses two text inputs, city & state(limit 2 chars) to fire weather fetch with an array of the two values.  Placeholders also update to last search.*/
+
+export default function SearchInput({
+  setLocation,
+  recent,
+  setRecent,
+  cityPlaceholder,
+  setCityPlaceholder,
+  statePlaceholder,
+  setStatePlaceholder,
+}) {
   let [cityText, setCityText] = useState("");
   let [stateText, setStateText] = useState("");
-  let [cityPlaceholder, setCityPlaceholder] = useState("Minneapolis");
-  let [statePlaceholder, setStatePlaceholder] = useState("MN");
 
   function onSubmit(event) {
     event.preventDefault();

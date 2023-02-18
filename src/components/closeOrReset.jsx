@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+/* This component can either close the MenuModal, or reset the favorite city, displaying the input box for favorite again. Component conditionally renders whole menu, collapsed by default.*/
+
 export default function CloseOrReset({ setFavorite, isShowing, setIsShowing }) {
   const [visible, setVisible] = useState(false);
 
@@ -45,7 +47,11 @@ export default function CloseOrReset({ setFavorite, isShowing, setIsShowing }) {
           >
             Reset Favorite
           </button>
-          <button type="button" onClick={closeMenu} className="flex self-center h-1/3 text-lg">
+          <button
+            type="button"
+            onClick={closeMenu}
+            className="flex self-center h-1/3 text-lg"
+          >
             Close Menu
           </button>
         </div>
