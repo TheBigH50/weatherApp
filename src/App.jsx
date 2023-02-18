@@ -34,7 +34,8 @@ console.log(isShowing)
       enterTo="translate-x-0 opacity-100"
       leave="transition ease-in-out duration-[2000ms] transform"
       leaveFrom="translate-x-0 opacity-100"
-      leaveTo="-translate-x-full opacity-0"            
+      leaveTo="-translate-x-full opacity-0"
+      className="delay-10"            
       >    
       <MenuModal location={location} setLocation={setLocation} isShowing={isShowing} setIsShowing={setIsShowing} cityPlaceholder={cityPlaceholder} setCityPlaceholder={setCityPlaceholder} statePlaceholder={statePlaceholder} setStatePlaceholder={setStatePlaceholder} favorite={favorite} setFavorite={setFavorite} recent={recent} setRecent={setRecent}/>
       </Transition>
