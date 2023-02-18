@@ -7,8 +7,8 @@ import MenuModal from "./components/menuModal";
 function App() {
   const [isShowing, setIsShowing] = useState(false);
   const [weatherData, setWeatherData] = useState({});
-  let [cityPlaceholder, setCityPlaceholder] = useState("");
-  let [statePlaceholder, setStatePlaceholder] = useState("");
+  let [cityPlaceholder, setCityPlaceholder] = useState("Minneapolis");
+  let [statePlaceholder, setStatePlaceholder] = useState("MN");
   let [favorite, setFavorite] = useState("");
   let [recent, setRecent] = useState(["\u263C", "\u263C", "\u263C"]);
   const [location, setLocation] = useState([]);
