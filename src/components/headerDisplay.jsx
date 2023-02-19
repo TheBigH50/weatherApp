@@ -1,5 +1,5 @@
 export default function HeaderDisplay({ weatherData, isShowing, setIsShowing}) {
-    console.log(weatherData);
+    console.log("HeaderDisplay", weatherData);
     
     return(
         <div className="flex flex-col h-1/3 max-w-fit">
@@ -17,7 +17,7 @@ export default function HeaderDisplay({ weatherData, isShowing, setIsShowing}) {
           />
         </svg>
       </button>
-      <h3>{`${weatherData.value.city}`}</h3>
+      <h3>{`${weatherData}`}</h3>
         </div>
     )
 }
