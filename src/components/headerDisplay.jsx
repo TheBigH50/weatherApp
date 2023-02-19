@@ -1,3 +1,5 @@
+import Clock from "./clock";
+
 export default function HeaderDisplay({
   weatherData,
   isShowing,
@@ -19,7 +21,8 @@ export default function HeaderDisplay({
           />
         </svg>
       </button>
-      <h3>{`${weatherData}`}</h3>
+      <h3>{`${weatherData.city}`}</h3>
+      <Clock/>
     </div>
   );
 }
