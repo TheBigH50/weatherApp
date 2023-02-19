@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import "./index.css";
 import getWeather from "./helperFunctions/getWeather.js";
 import MenuModal from "./components/menuModal";
+import HeaderDisplay from "./components/headerDisplay";
 
 function App() {
   const [isShowing, setIsShowing] = useState(false);
@@ -23,22 +24,17 @@ function App() {
   }, [location]);
 
   return (
-    <div className="flex flex-col -z-10">
-      <button
-        type="button"
-        onClick={() => setIsShowing(!isShowing)}
-        className="flex z-0"
-      >
-        MENU
-      </button>
-      <p className="flex z-0">here is some text</p>
+    <div className="flex flex-col -z-10 min-h-screen min">
+      <HeaderDisplay weatherData={weatherData} isShowing={isShowing} setIsShowing={setIsShowing}/>
+      
+
       <div className="absolute top-0 left-0">
         <Transition
           show={isShowing}
-          enter="transition ease-in-out duration-[2000ms] transform"
+          enter="transition ease-in-out duration-[1000ms] transform"
           enterFrom="-translate-x-full opacity-0"
           enterTo="translate-x-0 opacity-100"
-          leave="transition ease-in-out duration-[2000ms] transform"
+          leave="transition ease-in-out duration-[1000ms] transform"
           leaveFrom="translate-x-0 opacity-100"
           leaveTo="-translate-x-full opacity-0"
           className="delay-10"
