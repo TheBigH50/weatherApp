@@ -1,17 +1,18 @@
 import { Transition } from "@headlessui/react";
 import { useState, useEffect, useRef } from "react";
 import "./index.css";
-import consumeWeather from "./helperFunctions/consumeWeather";
-import MenuModal from "./components/menuModal";
-import HeaderDisplay from "./components/headerDisplay";
+import consumeWeather from "./helperFunctions/consumeWeather.js";
+import { getFavorite } from "./helperFunctions/defaultFavorite.js";
+import MenuModal from "./components/menuModal.jsx";
+import HeaderDisplay from "./components/headerDisplay.jsx";
 
 function App() {
   const [isShowing, setIsShowing] = useState(false);
   const [weatherData, setWeatherData] = useState({});
-  let [cityPlaceholder, setCityPlaceholder] = useState("Minneapolis");
-  let [statePlaceholder, setStatePlaceholder] = useState("MN");
-  let [favorite, setFavorite] = useState("");
-  let [recent, setRecent] = useState(["\u263C", "\u263C", "\u263C"]);
+  const [cityPlaceholder, setCityPlaceholder] = useState("Minneapolis");
+  const [statePlaceholder, setStatePlaceholder] = useState("MN");
+  const [favorite, setFavorite] = useState([]);
+  const [recent, setRecent] = useState(["\u263C", "\u263C", "\u263C"]);
   const [location, setLocation] = useState([]);
 
   const renderCount = useRef(0);
@@ -22,6 +23,15 @@ function App() {
       consumeWeather(location, setWeatherData);
     }
   }, [location]);
+
+  useEffect(() => {
+    if (renderCount.current > 1) {
+      getFavorite(setFavorite).then((favorite) => {
+        console.log("data is back ", favorite);
+        consumeWeather(favorite, setWeatherData);
+      });
+    }
+  }, []);
 
   return (
     <div className="flex flex-col -z-10 min-h-screen min">

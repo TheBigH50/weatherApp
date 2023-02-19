@@ -1,4 +1,4 @@
-import FavoriteInput from "./favoriteInput.jsx";
+import FavoriteInput from "./favoriteDisplay.jsx";
 import RecentList from "./recentList.jsx";
 import SearchInput from "./searchInput.jsx";
 import CloseOrReset from "./closeOrReset.jsx";
