@@ -1,4 +1,4 @@
-/* This function is two nested fetches, the first takes in the search location array to get geoCords, the second uses those cords to build and return a weatherData object. */
+/* This function is two nested fetches, the first takes in the search location array to get geoCords, the second uses those cords to build and return a promise containing the data. */
 
 export default async function getWeather(locationPairArr) {
   const city = locationPairArr[0];

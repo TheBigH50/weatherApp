@@ -1,9 +1,11 @@
-export default function HeaderDisplay({ weatherData, isShowing, setIsShowing}) {
-    console.log("HeaderDisplay", weatherData);
-    
-    return(
-        <div className="flex flex-col h-1/3 max-w-fit">
-            <button
+export default function HeaderDisplay({
+  weatherData,
+  isShowing,
+  setIsShowing,
+}) {
+  return (
+    <div className="flex flex-col h-1/3 max-w-fit">
+      <button
         type="button"
         onClick={() => setIsShowing(!isShowing)}
         className="flex mt-3 ml-3 z-0"
@@ -18,6 +20,6 @@ export default function HeaderDisplay({ weatherData, isShowing, setIsShowing}) {
         </svg>
       </button>
       <h3>{`${weatherData}`}</h3>
-        </div>
-    )
+    </div>
+  );
 }

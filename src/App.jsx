@@ -1,7 +1,7 @@
 import { Transition } from "@headlessui/react";
 import { useState, useEffect, useRef } from "react";
 import "./index.css";
-import getWeather from "./helperFunctions/getWeather.js";
+import consumeWeather from "./helperFunctions/consumeWeather";
 import MenuModal from "./components/menuModal";
 import HeaderDisplay from "./components/headerDisplay";
 
@@ -19,36 +19,10 @@ function App() {
   useEffect(() => {
     renderCount.current = renderCount.current + 1;
     if (renderCount.current > 2) {
-      getWeather(location).then((data) => {
-        const tempObj = {
-          city: data.name,
-          state: location[1],
-          lat: data.coord.lat,
-          lon: data.coord.lon,
-          actualTemp: data.main.temp,
-          feelsLikeTemp: data.main.feels_like,
-          highTemp: data.main.temp_max,
-          lowTemp: data.main.temp_min,
-          humidity: data.main.humidity,
-          currentWeather: data.weather[0].description,
-          weatherIconCode: data.weather[0].icon,
-          windDirection: data.wind.deg,
-          windSpeed: data.wind.speed,
-          gustSpeed: data.wind.gust,
-          cloudCover: data.clouds.all,
-          hourRainTotal: data.rain === undefined ? 0 : data.rain["1h"],
-
-          buildWeatherIconURL(weatherIconCode) {
-            const url = `https://openweathermap.org/img/wn/${weatherIconCode}.png`;
-            return url;
-          },
-        };
-
-        setWeatherData(tempObj);
-      });
+      consumeWeather(location, setWeatherData);
     }
   }, [location]);
-  console.log("Main App", weatherData);
+
   return (
     <div className="flex flex-col -z-10 min-h-screen min">
       <HeaderDisplay
