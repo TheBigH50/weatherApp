@@ -25,7 +25,7 @@ export default function SearchInput({
     event.preventDefault();
 
     cleanInput(cityText, setCityText);
-    setRecent(Array(cityText, ...recent).slice(0, 3));
+    setRecent(Array(Array(cityText, stateText), ...recent).slice(0, 3));
     setLocation(Array(cityText, stateText));
     setCityPlaceholder(cityText);
     setStatePlaceholder(stateText);
@@ -47,7 +47,7 @@ export default function SearchInput({
             onChange={(e) => setCityText(e.target.value)}
             name={"searchInput1"}
             placeholder={cityPlaceholder}
-            className="flex bg-gray-900 border-b border-yellow-300 focus:outline-none ml-2 mr-2 text-center text-yellow-300 placeholder-yellow-300 placeholder-opacity-70 text-base w-full"
+            className="flex bg-gray-900 border-b border-yellow-300 focus:outline-none ml-2 mr-2 text-center text-yellow-300 placeholder-yellow-300 placeholder-opacity-30 text-base w-full"
             required
           ></input>
         </label>
@@ -62,7 +62,7 @@ export default function SearchInput({
             onChange={(e) => setStateText(e.target.value)}
             name={"searchInput2"}
             placeholder={statePlaceholder}
-            className="flex bg-gray-900 border-b border-yellow-300 focus:outline-none ml-2 mr-2 text-center text-yellow-300 placeholder-yellow-300 placeholder-opacity-70 text-base w-full"
+            className="flex bg-gray-900 border-b border-yellow-300 focus:outline-none ml-2 mr-2 text-center text-yellow-300 placeholder-yellow-300 placeholder-opacity-30 text-base w-full"
             required
             maxLength={"2"}
           ></input>
