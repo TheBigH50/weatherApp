@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import getWeather from "../helperFunctions/getWeather.js";
+import { useState } from "react";
 
 /* This component uses two text inputs, city & state(limit 2 chars) to fire weather fetch with an array of the two values.  Placeholders also update to last search.*/
 
@@ -12,12 +11,20 @@ export default function SearchInput({
   statePlaceholder,
   setStatePlaceholder,
 }) {
-  let [cityText, setCityText] = useState("");
-  let [stateText, setStateText] = useState("");
+  let [cityText, setCityText] = useState("Paynesville");
+  let [stateText, setStateText] = useState("MN");
+
+  function cleanInput(cityText, setCityText) {
+    let space = / /g;
+    let plus = /\+/g;
+  
+    setCityText(cityText.replaceAll(space, plus));
+  }
 
   function onSubmit(event) {
     event.preventDefault();
 
+    cleanInput(cityText, setCityText);
     setRecent(Array(cityText, ...recent).slice(0, 3));
     setLocation(Array(cityText, stateText));
     setCityPlaceholder(cityText);
