@@ -39,6 +39,7 @@ function App() {
         weatherData={weatherData}
         isShowing={isShowing}
         setIsShowing={setIsShowing}
+        favorite={favorite}
       />
 
       <div className="absolute top-0 left-0">

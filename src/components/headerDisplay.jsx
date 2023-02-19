@@ -4,6 +4,7 @@ export default function HeaderDisplay({
   weatherData,
   isShowing,
   setIsShowing,
+  favorite,
 }) {
   return (
     <div className="flex flex-col h-1/3 max-w-fit">
@@ -21,8 +22,10 @@ export default function HeaderDisplay({
           />
         </svg>
       </button>
-      <h3>{`${weatherData.city}`}</h3>
+      <h3>{`Favorite City from Storage: ${favorite[0]}, ${favorite[1]}`}</h3>
       <Clock/>
+      <p>{`Current Search is for: ${weatherData.city}, ${weatherData.state}`}</p>
+      <p>{`${weatherData.actualTemp}`}</p>      
     </div>
   );
 }
