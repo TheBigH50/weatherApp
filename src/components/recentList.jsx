@@ -1,4 +1,4 @@
-import { storeFavorite } from "../helperFunctions/defaultFavorite.js";
+import { storeFavorite } from "../helperFunctions/localStorageFunctions.js";
 /* This component uses search input city and state text to set rolling list of the 3 most recently searched cities */
 
 export default function RecentList({ recent, favorite, setFavorite}) {

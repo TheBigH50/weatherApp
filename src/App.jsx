@@ -2,7 +2,11 @@ import { Transition } from "@headlessui/react";
 import { useState, useEffect, useRef } from "react";
 import "./index.css";
 import consumeWeather from "./helperFunctions/consumeWeather.js";
-import { getFavorite } from "./helperFunctions/defaultFavorite.js";
+import {
+  getRecent,
+  storeRecent,
+} from "./helperFunctions/localStorageFunctions.js";
+import { getFavorite } from "./helperFunctions/localStorageFunctions.js";
 import MenuModal from "./components/menuModal.jsx";
 import HeaderDisplay from "./components/headerDisplay.jsx";
 
@@ -27,9 +31,9 @@ function App() {
   useEffect(() => {
     if (renderCount.current > 1) {
       getFavorite(setFavorite).then((favorite) => {
-        console.log("data is back ", favorite);
         consumeWeather(favorite, setWeatherData);
       });
+      getRecent(setRecent);
     }
   }, []);
 
@@ -65,6 +69,7 @@ function App() {
             setFavorite={setFavorite}
             recent={recent}
             setRecent={setRecent}
+            renderCount={renderCount}
           />
         </Transition>
       </div>

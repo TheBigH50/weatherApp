@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { storeRecent } from "../helperFunctions/localStorageFunctions.js";
 
 /* This component uses two text inputs, city & state(limit 2 chars) to fire weather fetch with an array of the two values.  Placeholders also update to last search.*/
 
@@ -10,6 +11,7 @@ export default function SearchInput({
   setCityPlaceholder,
   statePlaceholder,
   setStatePlaceholder,
+  renderCount,
 }) {
   let [cityText, setCityText] = useState("Paynesville");
   let [stateText, setStateText] = useState("MN");
@@ -17,7 +19,7 @@ export default function SearchInput({
   function cleanInput(cityText, setCityText) {
     let space = / /g;
     let plus = /\+/g;
-  
+
     setCityText(cityText.replaceAll(space, plus));
   }
 
@@ -27,11 +29,17 @@ export default function SearchInput({
     cleanInput(cityText, setCityText);
     setRecent(Array(Array(cityText, stateText), ...recent).slice(0, 3));
     setLocation(Array(cityText, stateText));
-    setCityPlaceholder(cityText);
-    setStatePlaceholder(stateText);
     setCityText("");
     setStateText("");
   }
+
+  useEffect(() => {
+    if (renderCount.current > 2) {
+      setCityPlaceholder(recent[0][0]);
+      setStatePlaceholder(recent[0][1]);
+      storeRecent(recent);
+    }
+  }, [recent]);
 
   return (
     <div className="flex flex-col self-center z-30 bg-gray-900 text-yellow-300 border-yellow-300 border p-4 rounded-lg w-10/12">

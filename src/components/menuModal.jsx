@@ -17,6 +17,7 @@ export default function MenuModal({
   setFavorite,
   recent,
   setRecent,
+  renderCount,
 }) {
   return (
     <div className="flex flex-col justify-evenly bg-gray-900 bg-opacity-90 min-h-screen z-20 w-screen h-screen touch-none">
@@ -33,6 +34,7 @@ export default function MenuModal({
         setCityPlaceholder={setCityPlaceholder}
         statePlaceholder={statePlaceholder}
         setStatePlaceholder={setStatePlaceholder}
+        renderCount = {renderCount}
       />
       <CloseOrReset
         setFavorite={setFavorite}
