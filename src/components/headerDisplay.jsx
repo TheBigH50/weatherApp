@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Clock from "./clock";
 
 export default function HeaderDisplay({
@@ -5,7 +6,17 @@ export default function HeaderDisplay({
   isShowing,
   setIsShowing,
   favorite,
+  renderCount,
 }) {
+
+const [weatherIconURL, setWeatherIconURL] = useState("");
+
+useEffect(() => {
+  let clean = true;
+if(renderCount > 2 && clean) {
+  setWeatherIconURL(weatherData.buildWeatherIconURL(weatherData.weatherIconCode));
+} return () => { clean = !clean};
+},[weatherData]);
 
   return (
     <div className="flex min-h-fit h-52">
@@ -25,11 +36,13 @@ export default function HeaderDisplay({
         </svg>
       </button>   
       <p className="flex text-5xl self-center mt-5 mb-5 font-semibold">{`${weatherData.actualTemp}\u02DA`}</p>
-      <h3 className="flex text-lg ml-2">{`${weatherData.city}, ${weatherData.state}`}</h3>
+      <h3 className="flex text-lg font-semibold ml-3.5">{`${weatherData.city}, ${weatherData.state}`}</h3>
       <Clock/>
             
     </div>
-    <div className="flex w-1/2"></div>
+    <div className="flex w-1/2">
+      <img src={weatherData.weatherIconURL} alt="Current weather icon" height={50} width={50} />
+    </div>
     </div>
   );
 }

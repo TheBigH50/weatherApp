@@ -13,5 +13,5 @@ export default function Clock() {
     };
   }, []);
 
-  return <span>{`${date.getHours() > 12 ? date.getHours() - 12 : date.getHours()}:${date.getMinutes()} ${date.getHours() > 12 ? "PM" : "AM"}`}</span>;
+  return <span className="flex ml-3.5 font-medium text-base">{`${date.getHours() > 12 ? date.getHours() - 12 : date.getHours()}:${date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()} ${date.getHours() > 12 ? "PM" : "AM"}`}</span>;
 }

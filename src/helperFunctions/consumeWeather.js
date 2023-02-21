@@ -28,6 +28,6 @@ export default function consumeWeather(location, setWeatherData) {
       },
     };
 
-    //setWeatherData(tempObj);
+    setWeatherData(tempObj);
   });
 }

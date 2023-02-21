@@ -13,8 +13,8 @@ import HeaderDisplay from "./components/headerDisplay.jsx";
 function App() {
   const [isShowing, setIsShowing] = useState(false);
   const [weatherData, setWeatherData] = useState({});
-  const [cityPlaceholder, setCityPlaceholder] = useState("Minneapolis");
-  const [statePlaceholder, setStatePlaceholder] = useState("MN");
+  const [cityPlaceholder, setCityPlaceholder] = useState("City");
+  const [statePlaceholder, setStatePlaceholder] = useState("State");
   const [favorite, setFavorite] = useState([]);
   const [recent, setRecent] = useState(["\u263C", "\u263C", "\u263C"]);
   const [location, setLocation] = useState([]);
@@ -22,10 +22,15 @@ function App() {
   const renderCount = useRef(0);
 
   useEffect(() => {
+    let clean = true;
+    console.log("I ran");
     renderCount.current = renderCount.current + 1;
-    if (renderCount.current > 2) {
+    if (renderCount.current > 2 && clean) {
       consumeWeather(location, setWeatherData);
     }
+    return () => {
+      console.log("I cleaned"), (clean = !clean);
+    };
   }, [location]);
 
   useEffect(() => {
