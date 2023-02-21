@@ -12,5 +12,6 @@ export default function Clock() {
       clearInterval(timerId);
     };
   }, []);
-  return <span>{date.toLocaleTimeString()}</span>;
+
+  return <span>{`${date.getHours() > 12 ? date.getHours() - 12 : date.getHours()}:${date.getMinutes()} ${date.getHours() > 12 ? "PM" : "AM"}`}</span>;
 }

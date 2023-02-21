@@ -7,7 +7,7 @@ export default async function getWeather(locationPairArr) {
 console.log("Fetch Ran for: ", city);
 
   try {
-    const geoResponse = await fetch(
+    /* const geoResponse = await fetch(
       `https://api.openweathermap.org/geo/1.0/direct?q=${city},${state},US&limit=1&appid=c7148af000a9eeed1a60fdf5e1c953a6`
     );
     const geoData = await geoResponse.json();
@@ -19,7 +19,7 @@ console.log("Fetch Ran for: ", city);
     );
 
     const weatherData = await weatherResponse.json();
-    return weatherData;
+    return weatherData; */
   } catch (e) {
     console.error(e);
   }

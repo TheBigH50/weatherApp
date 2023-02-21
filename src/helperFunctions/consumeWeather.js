@@ -9,7 +9,7 @@ export default function consumeWeather(location, setWeatherData) {
       state: location[1],
       lat: data.coord.lat,
       lon: data.coord.lon,
-      actualTemp: data.main.temp,
+      actualTemp: Math.trunc(data.main.temp),
       feelsLikeTemp: data.main.feels_like,
       highTemp: data.main.temp_max,
       lowTemp: data.main.temp_min,
@@ -28,6 +28,6 @@ export default function consumeWeather(location, setWeatherData) {
       },
     };
 
-    setWeatherData(tempObj);
+    //setWeatherData(tempObj);
   });
 }

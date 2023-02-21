@@ -38,7 +38,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col -z-10 min-h-screen min">
+    <div className="flex flex-col">
       <HeaderDisplay
         weatherData={weatherData}
         isShowing={isShowing}
