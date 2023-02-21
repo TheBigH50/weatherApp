@@ -15,19 +15,14 @@ export default function consumeWeather(location, setWeatherData) {
       lowTemp: data.main.temp_min,
       humidity: data.main.humidity,
       currentWeather: data.weather[0].description,
-      weatherIconCode: data.weather[0].icon,
+      weatherIconCode: [data.weather[0].icon],
       windDirection: data.wind.deg,
       windSpeed: data.wind.speed,
       gustSpeed: data.wind.gust,
       cloudCover: data.clouds.all,
-      hourRainTotal: data.rain === undefined ? 0 : data.rain["1h"],
-
-      buildWeatherIconURL(weatherIconCode) {
-        const url = `https://openweathermap.org/img/wn/${weatherIconCode}.png`;
-        return url;
-      },
+      hourRainTotal: data.rain === undefined ? 0 : data.rain["1h"],      
     };
 
     setWeatherData(tempObj);
-  });
+  }).catch((e) => console.error(e));
 }

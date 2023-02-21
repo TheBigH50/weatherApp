@@ -25,16 +25,22 @@ export default function MenuModal({
         Menu
       </h2>
       <FavoriteInput favorite={favorite} setFavorite={setFavorite} />
-      <RecentList recent={recent} favorite={favorite} setFavorite={setFavorite} />
-      <SearchInput        
-        setLocation={setLocation}        
+      <RecentList
+        recent={recent}
+        favorite={favorite}
+        setFavorite={setFavorite}
+      />
+      <SearchInput
+        setLocation={setLocation}
         recent={recent}
         setRecent={setRecent}
         cityPlaceholder={cityPlaceholder}
         setCityPlaceholder={setCityPlaceholder}
         statePlaceholder={statePlaceholder}
         setStatePlaceholder={setStatePlaceholder}
-        renderCount = {renderCount}
+        isShowing={isShowing}
+        setIsShowing={setIsShowing}
+        renderCount={renderCount}
       />
       <CloseOrReset
         setFavorite={setFavorite}

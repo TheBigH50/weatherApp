@@ -12,9 +12,11 @@ export default function SearchInput({
   statePlaceholder,
   setStatePlaceholder,
   renderCount,
+  isShowing,
+  setIsShowing,
 }) {
-  let [cityText, setCityText] = useState("Paynesville");
-  let [stateText, setStateText] = useState("MN");
+  let [cityText, setCityText] = useState("");
+  let [stateText, setStateText] = useState("");
 
   function cleanInput(cityText, setCityText) {
     let space = / /g;
@@ -31,6 +33,7 @@ export default function SearchInput({
     setLocation(Array(cityText, stateText));
     setCityText("");
     setStateText("");
+    setIsShowing(!isShowing);
   }
 
   useEffect(() => {

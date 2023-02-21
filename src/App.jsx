@@ -20,6 +20,7 @@ function App() {
   const [location, setLocation] = useState([]);
 
   const renderCount = useRef(0);
+  const loaded = useRef(false);
 
   useEffect(() => {
     let clean = true;
@@ -37,8 +38,10 @@ function App() {
     if (renderCount.current > 1) {
       getFavorite(setFavorite).then((favorite) => {
         consumeWeather(favorite, setWeatherData);
+        loaded.current = true;
       });
       getRecent(setRecent);
+      
     }
   }, []);
 
@@ -49,6 +52,7 @@ function App() {
         isShowing={isShowing}
         setIsShowing={setIsShowing}
         favorite={favorite}
+        loaded={loaded}
       />
 
       <div className="absolute top-0 left-0">
