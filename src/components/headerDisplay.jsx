@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import WeatherIcon from "./weatherIcon.jsx";
 import Clock from "./clock";
 
@@ -6,7 +5,6 @@ export default function HeaderDisplay({
   weatherData,
   isShowing,
   setIsShowing,
-  favorite,
   loaded,
 }) {
   console.log(weatherData);
@@ -28,14 +26,12 @@ export default function HeaderDisplay({
             />
           </svg>
         </button>
-        <p className="flex text-5xl self-center mt-5 mb-5 font-semibold">{`${weatherData.actualTemp}\u02DA`}</p>
-        <h3 className="flex text-lg font-semibold ml-3.5">{`${weatherData.city}, ${weatherData.state}`}</h3>
+        <p className="flex text-5xl self-center mt-5 mb-5 ml-2.5 font-semibold">{`${weatherData.actualTemp}\u02DA`}</p>
+        <h3 className="flex text-lg font-semibold ml-5">{`${weatherData.city}, ${weatherData.state}`}</h3>
         <Clock />
-        </div>
-        
-        <WeatherIcon weatherData={weatherData} loaded={loaded} />
-      
-      
+      </div>
+
+      <WeatherIcon weatherData={weatherData} loaded={loaded} />
     </div>
   );
 }

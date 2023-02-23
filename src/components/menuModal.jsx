@@ -20,7 +20,7 @@ export default function MenuModal({
   renderCount,
 }) {
   return (
-    <div className="flex flex-col justify-evenly bg-gray-900 bg-opacity-90 z-20 w-screen h-screen touch-none">
+    <div className="flex flex-col justify-evenly bg-gray-900 bg-opacity-75 z-20 w-screen h-screen touch-none">
       <h2 className="flex self-center justify-center items-center z-20 bg-gray-900 text-yellow-300 border border-yellow-300 rounded-lg p-4 text-2xl tracking-wide font-bold w-10/12 h-20">
         Menu
       </h2>
