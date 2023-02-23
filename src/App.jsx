@@ -1,11 +1,11 @@
 import { Transition } from "@headlessui/react";
 import { useState, useEffect, useRef } from "react";
-import "./index.css";
+import { getFavorite, getRecent } from "./helperFunctions/localStorageFunctions.js";
 import consumeWeather from "./helperFunctions/consumeWeather.js";
-import { getRecent } from "./helperFunctions/localStorageFunctions.js";
-import { getFavorite } from "./helperFunctions/localStorageFunctions.js";
 import MenuModal from "./components/menuModal.jsx";
 import HeaderDisplay from "./components/headerDisplay.jsx";
+import WeatherDisplay from "./components/weatherDisplay.jsx";
+import "./index.css";
 
 function App() {
   const [isShowing, setIsShowing] = useState(false);
@@ -51,6 +51,7 @@ function App() {
           favorite={favorite}
           loaded={loaded}
         />
+        <WeatherDisplay/>
 
         <div className="absolute top-0 left-0">
           <Transition
