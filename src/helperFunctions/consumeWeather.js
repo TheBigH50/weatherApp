@@ -15,7 +15,7 @@ export default function consumeWeather(location, setWeatherData) {
       lowTemp: 7,
       humidity: 86,
       currentWeather: "light snow",
-      weatherIconCode: ["13n"],
+      weatherIconCode: ["10d"],
       windDirection: 44,
       windSpeed: 6,
       gustSpeed: 20,

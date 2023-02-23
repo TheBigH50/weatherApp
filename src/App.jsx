@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div className="absolute top-0 left-0 h-screen w-screen -z-10 bg-gradient-to-br from-teal-800 via-blue-500 to-teal-200">
-      <div className="flex flex-col">
+      <div className="flex min-h-screen flex-col">
         <HeaderDisplay
           weatherData={weatherData}
           isShowing={isShowing}
@@ -51,7 +51,7 @@ function App() {
           favorite={favorite}
           loaded={loaded}
         />
-        <WeatherDisplay/>
+        <WeatherDisplay loaded={loaded} weatherData={weatherData} />
 
         <div className="absolute top-0 left-0">
           <Transition
