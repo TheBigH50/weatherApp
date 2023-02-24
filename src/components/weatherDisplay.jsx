@@ -41,7 +41,7 @@ export default function WeatherDisplay({ loaded, weatherData }) {
               width={50}
             />
             <p className="flex fixed place-self-center mb-.5 text-2xl font-semibold">
-              {weatherData.windDirection}
+              {`${weatherData.windDirection}`}
             </p>
           </div>
           <div className="flex justify-around items-end">
@@ -49,7 +49,7 @@ export default function WeatherDisplay({ loaded, weatherData }) {
               {<span>Wind-Speed&nbsp;</span>}
               {
                 <span className="text-lg font-semibold not-italic">
-                  {weatherData.windSpeed}
+                  {`${weatherData.windSpeed}`}
                 </span>
               }
               &nbsp;mph
@@ -58,7 +58,7 @@ export default function WeatherDisplay({ loaded, weatherData }) {
               Gusts up to&nbsp;
               {
                 <span className="text-lg font-semibold not-italic leading-normal">
-                  {weatherData.gustSpeed}&nbsp;
+                  {`${weatherData.gustSpeed}`}&nbsp;
                 </span>
               }
               mph
