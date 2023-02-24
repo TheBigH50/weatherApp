@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { storeRecent } from "../helperFunctions/localStorageFunctions.js";
+import { storeRecent } from "../../helperFunctions/localStorageFunctions.js";
 
 /* This component uses two text inputs, city & state(limit 2 chars) to fire weather fetch with an array of the two values.  Placeholders also update to last search.*/
 

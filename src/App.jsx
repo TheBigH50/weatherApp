@@ -2,9 +2,9 @@ import { Transition } from "@headlessui/react";
 import { useState, useEffect, useRef } from "react";
 import { getFavorite, getRecent } from "./helperFunctions/localStorageFunctions.js";
 import consumeWeather from "./helperFunctions/consumeWeather.js";
-import MenuModal from "./components/menuModal.jsx";
-import HeaderDisplay from "./components/headerDisplay.jsx";
-import WeatherDisplay from "./components/weatherDisplay.jsx";
+import MenuModal from "./components/menuModal/menuModal.jsx";
+import HeaderDisplay from "./components/headerDisplay/headerDisplay.jsx";
+import WeatherDisplay from "./components/weatherDisplay/weatherDisplay.jsx";
 import "./index.css";
 
 function App() {
