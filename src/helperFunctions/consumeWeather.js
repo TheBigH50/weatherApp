@@ -1,4 +1,5 @@
 import getWeather from "./getWeather.js";
+import determineWind from "./determineWind.js";
 
 /* This function gets passed a state and a setState, which it uses to consume a fetch promise, and setState to an object of fetched data. */
 
@@ -23,6 +24,7 @@ export default function consumeWeather(location, setWeatherData) {
       hourRainTotal: 0,      
     };
 
-    setWeatherData(tempObj);
-//   }).catch((e) => console.error(e));
+      setWeatherData(tempObj);
+    /* })
+    .catch((e) => console.error(e)); */
 }
