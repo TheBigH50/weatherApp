@@ -13,6 +13,13 @@ module.exports = {
           "50%": { opacity: 1, transform: "rotate(3deg)" },
           "75%": { opacity: 0.7 },
         },
+        smallPing: {
+          "75%, 100%": { opacity: 0, transform: "scale(1.5);" },
+        },
+        compass: {
+          "50%": { transform: "rotate(360deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
       },
     },
   },
