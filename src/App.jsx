@@ -15,16 +15,17 @@ function App() {
   const [favorite, setFavorite] = useState([]);
   const [recent, setRecent] = useState(["\u263C", "\u263C", "\u263C"]);
   const [location, setLocation] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
   const renderCount = useRef(0);
-  const loaded = useRef(false);
+  //const loaded = useRef(false);
 
   useEffect(() => {
     let clean = true;
     console.log("I ran");
     renderCount.current = renderCount.current + 1;
     if (renderCount.current > 2 && clean) {
-      consumeWeather(location, setWeatherData);
+      consumeWeather(location, setWeatherData, setLoaded);
     }
     return () => {
       console.log("I cleaned"), (clean = !clean);
@@ -34,10 +35,11 @@ function App() {
   useEffect(() => {
     if (renderCount.current > 1) {
       getFavorite(setFavorite).then((favorite) => {
-        consumeWeather(favorite, setWeatherData);
-        loaded.current = true;
+        consumeWeather(favorite, setWeatherData, setLoaded);
+        //loaded.current = true;        
       });
       getRecent(setRecent);
+      
     }
   }, []);
 

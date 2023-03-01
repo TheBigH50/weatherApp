@@ -1,5 +1,5 @@
 export default function WeatherIcon({ weatherData, loaded }) {
-  if (loaded.current === true) {
+  if (loaded === true) {
     return (
       <div className="flex w-1/2 items-center justify-center h-full">
         {weatherData.weatherIconCode.map((code) => (
