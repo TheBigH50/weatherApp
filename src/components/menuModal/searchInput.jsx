@@ -45,7 +45,7 @@ export default function SearchInput({
   }, [recent]);
 
   return (
-    <div className="flex flex-col self-center z-30 bg-gray-900 text-yellow-300 border-yellow-300 border p-4 rounded-lg w-10/12">
+    <div className="flex flex-col self-center z-30 bg-gray-900 text-yellow-300 border-yellow-300 border z-20 p-4 rounded-lg w-10/12">
       <form onSubmit={onSubmit} className="flex flex-col self-center">
         <label
           htmlFor="searchInput"
