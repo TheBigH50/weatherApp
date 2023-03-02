@@ -53,7 +53,7 @@ function App() {
           favorite={favorite}
           loaded={loaded}
         />
-        <WeatherDisplay loaded={loaded} weatherData={weatherData} />
+        <WeatherDisplay loaded={loaded} weatherData={weatherData} isShowing={isShowing} />
 
         <div className="absolute top-0 left-0">
           <Transition
