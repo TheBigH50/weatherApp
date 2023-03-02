@@ -28,14 +28,14 @@ export default function CloudsSection({ loaded, weatherData }) {
     return (
       <div className="flex flex-col min-h-fit mt-1 items-center">
         <div className="flex flex-col w-11/12 mt-2.5 mb-2.5 justify-evenly h-28 rounded-lg bg-gray-900 bg-opacity-10">
-          <div className="flex relative w-5/6 h-1/3 mb-0.5 rounded-lg self-center bg-gray-500">
+          <div className="flex w-5/6 h-1/3 mb-0.5 rounded-lg self-center bg-gray-500">
             <div
-              className="flex m-1 absolute h-[80%] rounded-lg bg-transparent self-center"
+              className="flex m-1 h-[80%] rounded-lg bg-transparent self-center"
               style={customStyle}
             >
               <div
                 id="cloudBar"
-                className="flex relative bg-gray-200 rounded-lg h-full w-0"
+                className="flex bg-gradient-to-b from-gray-100 via-gray-500 to-gray-100 m-0 rounded-lg h-full w-0"
               ></div>
             </div>
           </div>
