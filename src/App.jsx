@@ -28,7 +28,7 @@ function App() {
       consumeWeather(location, setWeatherData, setLoaded);
     }
     return () => {
-      console.log("I cleaned"), (clean = !clean);
+      console.log("I cleaned"); (clean = !clean);
     };
   }, [location]);
 

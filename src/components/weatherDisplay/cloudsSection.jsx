@@ -18,7 +18,7 @@ export default function CloudsSection({ loaded, weatherData }) {
         cloudBar.classList.add(...transitionList);
         cloudBar.classList.remove("w-0");
       cloudBar.classList.add("w-full");
-      }, "10");
+      }, "100");
     }
   }, [weatherData]);
 
