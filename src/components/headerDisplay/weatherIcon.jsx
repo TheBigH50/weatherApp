@@ -5,7 +5,7 @@ export default function WeatherIcon({ weatherData, loaded }) {
         {weatherData.weatherIconCode.map((code) => (
           <img
             key={code}
-            src={`src/assets/weatherIcons/${code}@2x.png`}
+            src={`/weatherIcons/${code}@2x.png`}
             alt="Current weather icon"
             className="flex mb-10 animate-[wiggleANDpulse_1.5s_ease-in-out_infinite] h-3/5"
           />

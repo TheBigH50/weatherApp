@@ -37,7 +37,7 @@ function App() {
   }, [location]);
 
   useEffect(() => {
-    if (renderCount.current > 1) {
+    if (renderCount.current > 0) {
       getFavorite(setFavorite).then((favorite) => {
         consumeWeather(favorite, setWeatherData, setLoaded);
         //loaded.current = true;

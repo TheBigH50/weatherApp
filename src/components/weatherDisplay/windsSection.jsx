@@ -8,14 +8,14 @@ export default function WindsSection({ loaded, weatherData }) {
         <div className="flex relative mt-7 justify-center">
           <img
             className="flex fixed place-self-center animate-[smallPing_3.5s_ease-out_infinite]"
-            src="src\assets\compassIcon.png"
+            src="/assets/compassIcon.png"
             alt="Compass"
             height={50}
             width={50}
           />
           <img
             className="flex fixed place-self-center animate-[compass_7s_ease-in-out_infinite]"
-            src="src\assets\compassIcon.png"
+            src="/assets/compassIcon.png"
             alt="Compass"
             height={50}
             width={50}
