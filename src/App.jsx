@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="absolute top-0 left-0 h-screen w-screen -z-10 bg-gradient-to-br from-teal-800 via-blue-500 to-teal-200">
-      <div className="flex justify-between min-h-screen flex-col">
+      <div className="flex flex-col">
         <HeaderDisplay
           weatherData={weatherData}
           isShowing={isShowing}

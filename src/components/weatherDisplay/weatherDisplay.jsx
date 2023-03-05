@@ -10,8 +10,8 @@ export default function WeatherDisplay({ loaded, weatherData }) {
     return (
       <div className="flex min-h-full flex-col">
         <TempsSection loaded={loaded} weatherData={weatherData} />
-        <CloudsSection loaded={loaded} weatherData={weatherData} />
         <SummarySection loaded={loaded} weatherData={weatherData} />
+        <CloudsSection loaded={loaded} weatherData={weatherData} />
         <WindsSection loaded={loaded} weatherData={weatherData} />
       </div>
     );
