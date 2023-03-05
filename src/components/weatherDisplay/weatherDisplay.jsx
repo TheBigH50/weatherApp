@@ -5,10 +5,10 @@ import SummarySection from "./summarySection.jsx";
 
 export default function WeatherDisplay({ loaded, weatherData }) {
   if (!loaded) {
-    return <div className="flex min-h-full">yo</div>;
+    return <div className="flex min-h-full"></div>;
   } else {
     return (
-      <div>
+      <div className="flex min-h-full flex-col">
         <TempsSection loaded={loaded} weatherData={weatherData} />
         <CloudsSection loaded={loaded} weatherData={weatherData} />
         <SummarySection loaded={loaded} weatherData={weatherData} />

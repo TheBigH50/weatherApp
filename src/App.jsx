@@ -17,7 +17,7 @@ function App() {
   const [statePlaceholder, setStatePlaceholder] = useState("State");
   const [favorite, setFavorite] = useState([]);
   const [recent, setRecent] = useState(["\u263C", "\u263C", "\u263C"]);
-  const [location, setLocation] = useState([]);
+  const [location, setLocation] = useState(["Minneapolis", "MN"]);
   const [loaded, setLoaded] = useState(false);
 
   const renderCount = useRef(0);
@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="absolute top-0 left-0 h-screen w-screen -z-10 bg-gradient-to-br from-teal-800 via-blue-500 to-teal-200">
-      <div className="flex min-h-screen flex-col">
+      <div className="flex justify-between min-h-screen flex-col">
         <HeaderDisplay
           weatherData={weatherData}
           isShowing={isShowing}
@@ -91,7 +91,9 @@ function App() {
             />
           </Transition>
         </div>
+        <h6 className="flex self-center">Built by Harrison Fangmeier 2023</h6>
       </div>
+      
     </div>
   );
 }

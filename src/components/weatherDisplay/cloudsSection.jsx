@@ -23,7 +23,7 @@ export default function CloudsSection({ loaded, weatherData }) {
   }, [weatherData]);
 
   if (!loaded) {
-    return <div className="flex min-h-full">yo</div>;
+    return <div className="flex min-h-full"></div>;
   } else {
     return (
       <div className="flex flex-col min-h-fit mt-1 items-center">

@@ -1,6 +1,6 @@
 export default function SummarySection({ loaded, weatherData }) {
   if (!loaded) {
-    return <div className="flex min-h-full">yo</div>;
+    return <div className="flex min-h-full"></div>;
   } else if (loaded && weatherData.hourRainTotal > 0) {
     return (
       <div className="flex flex-col min-h-fit mt-1 items-center">
