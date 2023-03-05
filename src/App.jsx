@@ -1,6 +1,9 @@
 import { Transition } from "@headlessui/react";
 import { useState, useEffect, useRef } from "react";
-import { getFavorite, getRecent } from "./helperFunctions/localStorageFunctions.js";
+import {
+  getFavorite,
+  getRecent,
+} from "./helperFunctions/localStorageFunctions.js";
 import consumeWeather from "./helperFunctions/consumeWeather.js";
 import MenuModal from "./components/menuModal/menuModal.jsx";
 import HeaderDisplay from "./components/headerDisplay/headerDisplay.jsx";
@@ -28,7 +31,8 @@ function App() {
       consumeWeather(location, setWeatherData, setLoaded);
     }
     return () => {
-      console.log("I cleaned"); (clean = !clean);
+      console.log("I cleaned");
+      clean = !clean;
     };
   }, [location]);
 
@@ -36,10 +40,9 @@ function App() {
     if (renderCount.current > 1) {
       getFavorite(setFavorite).then((favorite) => {
         consumeWeather(favorite, setWeatherData, setLoaded);
-        //loaded.current = true;        
+        //loaded.current = true;
       });
       getRecent(setRecent);
-      
     }
   }, []);
 
@@ -53,7 +56,11 @@ function App() {
           favorite={favorite}
           loaded={loaded}
         />
-        <WeatherDisplay loaded={loaded} weatherData={weatherData} isShowing={isShowing} />
+        <WeatherDisplay
+          loaded={loaded}
+          weatherData={weatherData}
+          isShowing={isShowing}
+        />
 
         <div className="absolute top-0 left-0">
           <Transition
@@ -79,6 +86,8 @@ function App() {
               recent={recent}
               setRecent={setRecent}
               renderCount={renderCount}
+              setLoaded={setLoaded}
+              setWeatherData={setWeatherData}
             />
           </Transition>
         </div>

@@ -1,12 +1,26 @@
 import { storeFavorite } from "../../helperFunctions/localStorageFunctions.js";
+import consumeWeather from "../../helperFunctions/consumeWeather.js";
 /* This component uses search input city and state text to set rolling list of the 3 most recently searched cities */
 
-export default function RecentList({ recent, favorite, setFavorite }) {
+export default function RecentList({
+  recent,
+  favorite,
+  setFavorite,
+  setWeatherData,
+  setLoaded,
+  isShowing,
+  setIsShowing,
+}) {
   let keyNumber = 34;
 
   function setAndStore(city) {
     setFavorite(Array(...city));
     storeFavorite(city);
+  }
+
+  function searchRecent(city) {
+    consumeWeather(city, setWeatherData, setLoaded);
+    setIsShowing(!isShowing);
   }
 
   if (favorite === "") {
@@ -17,7 +31,7 @@ export default function RecentList({ recent, favorite, setFavorite }) {
           {recent.map((city) => (
             <li
               key={`${keyNumber++}${recent}`}
-              className="text-center  m-1 border-dotted border-b w-full border-yellow-300"
+              className="text-center m-1 border-dotted border-b w-full border-yellow-300"
             >
               {"\u00BB" + " " + " " + `${city[0]}` + " " + " " + "\u00AB"}
               <button
@@ -42,7 +56,13 @@ export default function RecentList({ recent, favorite, setFavorite }) {
               key={`${keyNumber++}${recent}`}
               className="text-center m-1 border-dotted border-b w-full border-yellow-300"
             >
-              {"\u00BB" + " " + " " + `${city[0]}` + " " + " " + "\u00AB"}
+              {"\u00BB" + " " + " "}
+              <button
+                type="button"
+                onClick={() => searchRecent(city)}
+                className=""
+              >{`${city[0]}`}</button>
+              {" " + " " + "\u00AB"}
             </li>
           ))}
         </ul>

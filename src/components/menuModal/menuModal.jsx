@@ -18,17 +18,30 @@ export default function MenuModal({
   recent,
   setRecent,
   renderCount,
+  setLoaded,
+  setWeatherData,
 }) {
   return (
     <div className="flex flex-col justify-evenly bg-gray-900 bg-opacity-75 z-20 w-screen h-screen touch-none">
       <h2 className="flex self-center justify-center items-center z-20 bg-gray-900 text-yellow-300 border border-yellow-300 rounded-lg p-4 text-2xl tracking-wide font-bold w-10/12 h-20">
         Menu
       </h2>
-      <FavoriteInput favorite={favorite} setFavorite={setFavorite} />
+      <FavoriteInput
+        favorite={favorite}
+        setFavorite={setFavorite}
+        setLoaded={setLoaded}
+        setWeatherData={setWeatherData}
+        isShowing={isShowing}
+        setIsShowing={setIsShowing}
+      />
       <RecentList
         recent={recent}
         favorite={favorite}
         setFavorite={setFavorite}
+        setLoaded={setLoaded}
+        setWeatherData={setWeatherData}
+        isShowing={isShowing}
+        setIsShowing={setIsShowing}
       />
       <SearchInput
         setLocation={setLocation}
