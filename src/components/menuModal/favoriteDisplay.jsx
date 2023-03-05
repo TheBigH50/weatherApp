@@ -14,7 +14,7 @@ export default function FavoriteInput({
     setIsShowing(!isShowing);
   }
 
-  if (favorite === "") {
+  if (favorite === "" || favorite === undefined) {
     return (
       <div className="flex flex-col justify-center self-center z-30 bg-gray-900 text-yellow-300 border-yellow-300 border p-4 rounded-lg w-10/12 h-20">
         <h6 className="flex self-center text-lg">Select A Favorite</h6>
