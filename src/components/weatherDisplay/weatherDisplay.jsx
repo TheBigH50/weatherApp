@@ -1,6 +1,7 @@
 import TempsSection from "./tempsSection.jsx";
 import WindsSection from "./windsSection.jsx";
 import CloudsSection from "./cloudsSection.jsx";
+import SummarySection from "./summarySection.jsx";
 
 export default function WeatherDisplay({ loaded, weatherData }) {
   if (!loaded) {
@@ -9,6 +10,7 @@ export default function WeatherDisplay({ loaded, weatherData }) {
     return (
       <div>
         <TempsSection loaded={loaded} weatherData={weatherData} />
+        <SummarySection loaded={loaded} weatherData={weatherData} />
         <WindsSection loaded={loaded} weatherData={weatherData} />
         <CloudsSection loaded={loaded} weatherData={weatherData} />
       </div>
