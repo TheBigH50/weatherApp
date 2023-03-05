@@ -27,7 +27,7 @@ function App() {
     let clean = true;
     console.log("I ran");
     renderCount.current = renderCount.current + 1;
-    if (renderCount.current > 2 && clean) {
+    if (renderCount.current > 1 && clean) {
       consumeWeather(location, setWeatherData, setLoaded);
     }
     return () => {
