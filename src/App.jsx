@@ -47,7 +47,8 @@ function App() {
   }, []);
 
   return (
-    <div className="absolute top-0 left-0 h-screen w-screen -z-10 bg-gradient-to-br from-teal-800 via-blue-500 to-teal-200">
+    <div className="absolute top-0 left-0 overflow-hidden h-screen w-screen -z-10 bg-gradient-to-br from-teal-800 via-blue-500 to-teal-200">
+      <div className="absolute top-0 left-0 overflow-auto h-screen w-screen">
       <div className="flex flex-col">
         <HeaderDisplay
           weatherData={weatherData}
@@ -91,9 +92,9 @@ function App() {
             />
           </Transition>
         </div>
-        <h6 className="flex self-center">Built by Harrison Fangmeier 2023</h6>
-      </div>
-      
+        <div className="flex self-center">Built by Harrison Fangmeier 2023</div>
+      </div> 
+      </div>     
     </div>
   );
 }
