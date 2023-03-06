@@ -47,7 +47,7 @@ function App() {
   }, []);
 
   return (
-    <div className="absolute top-0 left-0 overflow-hidden h-screen w-screen -z-10 bg-gradient-to-br from-teal-800 via-blue-500 to-teal-200">
+    <div className="absolute top-0 left-0 overflow-hidden touch-none h-screen w-screen -z-10 bg-gradient-to-br from-teal-800 via-blue-500 to-teal-200">
       <div className="absolute top-0 left-0 overflow-auto h-screen w-screen">
       <div className="flex flex-col">
         <HeaderDisplay
