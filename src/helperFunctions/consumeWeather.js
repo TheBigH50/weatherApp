@@ -17,6 +17,11 @@ export default function consumeWeather(location, setWeatherData, setLoaded) {
         lowTemp: Math.round(data.main.temp_min),
         pressure: Math.round(data.main.pressure * 0.02953 * 100) / 100,
         humidity: data.main.humidity,
+        dewPoint: Math.round(
+          ((data.main.temp - 32) * (5 / 9) - (100 - data.main.humidity) / 5) *
+            (9 / 5) +
+            32
+        ),
         currentWeather: data.weather[0].description,
         weatherIconCode: [data.weather[0].icon],
         windDirection: determineWind(data.wind.deg),
